@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task.iml" filepath="$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task.iml" group="Encryption-Decryption1/Encryption-Decryption-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task_main.iml" group="Encryption-Decryption1/Encryption-Decryption-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Encryption-Decryption/task/Encryption-Decryption-task_test.iml" group="Encryption-Decryption1/Encryption-Decryption-task" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Encryption-Decryption1.iml" filepath="$PROJECT_DIR$/.idea/modules/Encryption-Decryption1.iml" group="Encryption-Decryption1" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations.iml" group="Encryption-Decryption1/Problems-Count_the_number_of_merge_operations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations_main.iml" group="Encryption-Decryption1/Problems-Count_the_number_of_merge_operations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Count the number of merge operations/Problems-Count_the_number_of_merge_operations_test.iml" group="Encryption-Decryption1/Problems-Count_the_number_of_merge_operations" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences.iml" group="Encryption-Decryption1/Problems-Merge_all_sequences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences_main.iml" group="Encryption-Decryption1/Problems-Merge_all_sequences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Merge all sequences/Problems-Merge_all_sequences_test.iml" group="Encryption-Decryption1/Problems-Merge_all_sequences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter.iml" group="Encryption-Decryption1/Problems-Printing_a_magic_letter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter_main.iml" group="Encryption-Decryption1/Problems-Printing_a_magic_letter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Problems/Printing a magic letter/Problems-Printing_a_magic_letter_test.iml" group="Encryption-Decryption1/Problems-Printing_a_magic_letter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util.iml" group="Encryption-Decryption1/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_main.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_main.iml" group="Encryption-Decryption1/util" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/util/util_test.iml" filepath="$PROJECT_DIR$/.idea/modules/util/util_test.iml" group="Encryption-Decryption1/util" />
+    </modules>
+  </component>
+</project>

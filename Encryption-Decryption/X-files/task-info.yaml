@@ -1,0 +1,153 @@
+type: edu
+custom_name: stage5
+files:
+- name: test/EncryptDecryptTest.java
+  visible: false
+  text: |
+    import encryptdecrypt.Main;
+    import org.hyperskill.hstest.common.FileUtils;
+    import org.hyperskill.hstest.stage.StageTest;
+    import org.hyperskill.hstest.testcase.CheckResult;
+    import org.hyperskill.hstest.testcase.TestCase;
+
+    import java.io.IOException;
+    import java.nio.charset.StandardCharsets;
+    import java.nio.file.Files;
+    import java.nio.file.NoSuchFileException;
+    import java.nio.file.Path;
+    import java.nio.file.Paths;
+    import java.util.List;
+
+    public class EncryptDecryptTest extends StageTest<String> {
+        public EncryptDecryptTest() {
+            super(Main.class);
+        }
+
+        @Override
+        public List<TestCase<String>> generate() {
+            return List.of(
+                new TestCase<String>()
+                    .addArguments(
+                        "-mode", "enc",
+                        "-key", "5",
+                        "-in", "in.txt",
+                        "-out", "output.txt"
+                    )
+                    .setAttach("\\jqhtrj%yt%m~ujwxpnqq&")
+                    .addFile("in.txt", "Welcome to hyperskill!"),
+
+                new TestCase<String>()
+                    .addArguments(
+                        "-key", "0",
+                        "-mode", "enc",
+                        "-in", "input.txt",
+                        "-out", "output.txt"
+                    )
+                    .setAttach("Hello")
+                    .addFile("input.txt", "Hello"),
+
+                new TestCase<String>()
+                    .addArguments(
+                        "-key", "1",
+                        "-in", "i.txt",
+                        "-out", "output.txt",
+                        "-mode", "enc"
+                    )
+                    .setAttach("123456789")
+                    .addFile("i.txt", "012345678"),
+
+                new TestCase<String>()
+                    .addArguments(
+                        "-mode", "dec",
+                        "-in", "input.txt",
+                        "-out", "output.txt",
+                        "-key", "5"
+                    )
+                    .setAttach("Welcome to hyperskill!")
+                    .addFile("input.txt", "\\jqhtrj%yt%m~ujwxpnqq&"),
+
+                new TestCase<String>()
+                    .addArguments(
+                        "-mode", "dec",
+                        "-key", "0",
+                        "-in", "input.txt",
+                        "-out", "output.txt"
+                    )
+                    .setAttach("Hi")
+                    .addFile("input.txt", "Hi"),
+
+                new TestCase<String>()
+                    .addArguments(
+                        "-mode", "dec",
+                        "-key", "1",
+                        "-in", "input.txt",
+                        "-out", "output.txt"
+                    )
+                    .setAttach("111122223333")
+                    .addFile("input.txt", "222233334444")
+            );
+        }
+
+        @Override
+        public CheckResult check(String reply, String clue) {
+            String fileName = "output.txt";
+            String output;
+
+            try {
+                Path path = Paths.get(FileUtils.CURRENT_DIR + fileName);
+                output = Files.readString(path, StandardCharsets.UTF_8);
+            } catch (NoSuchFileException e) {
+                return new CheckResult(false, "File output.txt not found!");
+            } catch (IOException e) {
+                return new CheckResult(false, "Cannot read from file!");
+            }
+
+            if (!output.trim().equals(clue.trim())) {
+                return new CheckResult(false, "Wrong result in the file!");
+            }
+
+            return new CheckResult(true);
+        }
+    }
+  learner_created: false
+- name: src/encryptdecrypt/Main.java
+  visible: true
+  text: "package encryptdecrypt;\n\nimport java.util.Scanner;\n\npublic class Main\
+    \ {\n\n    private static final char[] LOWER_CASE = new char[26];\n    static\
+    \ {\n        int index = 0;\n        for( char ch = 'a'; ch <= 'z'; ch++ ) {\n\
+    \            LOWER_CASE[index] =ch;\n            index++;\n        }\n    }\n\n\
+    \    public static Operation getOperation( String operation ) {\n        for(\
+    \ Operation op : Operation.values() ) {\n            if( op.getName().equals(operation)\
+    \ )\n                return op;\n        }\n        return null;\n    }\n\n  \
+    \  public static String transform( String originalText, int shiftKey, Operation\
+    \ op ) {\n        char[] transformedChars = new char[originalText.length()];\n\
+    \        int index = 0;\n        for( char ch : originalText.toCharArray() ) {\n\
+    \            int codeUnit = op == Operation.ENC ? ch + shiftKey : ch - shiftKey;\n\
+    \            transformedChars[index] = (char) codeUnit;\n            index++;\n\
+    \        }\n        return String.valueOf(transformedChars);\n    }\n    \n  \
+    \  public static int getIndexOfArgument( String[] args, String key ) {\n     \
+    \   for( int i = 0; i < args.length; i++ ) {\n            if( args[i].equals(key)\
+    \ )\n                return i+1;\n        }\n        return -1;\n    }\n\n   \
+    \ public static void main(String[] args) {\n        \n        int mode = getIndexOfArgument(args,\
+    \ \"-mode\");\n        String modeValue = mode == -1 ? \"enc\" : args[mode];\n\
+    \        Operation op = getOperation(modeValue);\n        if( op != null ) {\n\
+    \            String originalText = \"\";\n            int data = getIndexOfArgument(args,\
+    \ \"-data\");\n            originalText = data == -1 ? originalText : args[data];\n\
+    \            int shiftKey = 0;\n            int shiftIndex = getIndexOfArgument(args,\"\
+    -key\");\n            shiftKey = shiftIndex == -1 ? shiftKey : Integer.valueOf(args[shiftIndex]);\n\
+    \            String transformedText = transform( originalText, shiftKey, op );\n\
+    \            System.out.println(transformedText);\n        }\n    }\n}\nenum Operation\
+    \ {\n    ENC(\"enc\"), DEC(\"dec\");\n    private String name;\n    Operation(String\
+    \ name) {\n        this.name = name;\n    }\n    public String getName() {\n \
+    \       return this.name;\n    }\n}\n"
+  learner_created: false
+- name: output.txt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/projects/46/stages/249/implement
+status: Solved
+feedback:
+  message: Congratulations! Continue on <a href="https://hyperskill.org/projects/46/stages/249/implement">JetBrains
+    Academy</a>
+  time: Tue, 30 Jun 2020 15:21:30 UTC
+record: 5
